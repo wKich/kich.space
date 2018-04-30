@@ -1,0 +1,23 @@
+{
+  "name": "kich.space",
+  "version": "1.0.0",
+  "description": "Personal homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wKich/kich.space.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wKich/kich.space/issues"
+  },
+  "homepage": "https://github.com/wKich/kich.space#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
