@@ -11,5 +11,5 @@ const options = {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.listen(3000)
+app.listen(3000)
 https.createServer(options, app).listen(3443)
