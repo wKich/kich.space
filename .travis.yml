@@ -12,6 +12,6 @@ before_install:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: rsync -av -e ssh --exclude='.git/' ./ $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH
+    script: rsync -av -e ssh --exclude='.git/' --filter='protect .well-known' --filter='protect .env' ./ $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH
     on:
       branch: master
