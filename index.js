@@ -1,15 +1,18 @@
-const https = require('https')
-const fs = require('fs')
-const path = require('path')
-const express = require('express')
-const app = express()
+const https = require("https");
+const fs = require("fs");
+const path = require("path");
+const dotenv = require("dotenv");
+const express = require("express");
+const app = express();
+
+dotenv.config();
 
 const options = {
-  cert: fs.readFileSync(path.join(__dirname, '..', 'sslcert', 'fullchain.pem')),
-  key: fs.readFileSync(path.join(__dirname, '..', 'sslcert', 'privkey.pem'))
-}
+  cert: fs.readFileSync(`${process.env.SSL_CERT_PATH}/fullchain.pem`),
+  key: fs.readFileSync(`${process.env.SSL_CERT_PATH}/privkey.pem`)
+};
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(3000)
-https.createServer(options, app).listen(3443)
+app.listen(3000);
+https.createServer(options, app).listen(3443);
