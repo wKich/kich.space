@@ -7,12 +7,15 @@ const app = express();
 
 dotenv.config();
 
-const options = {
-  cert: fs.readFileSync(`${process.env.SSL_CERT_PATH}/fullchain.pem`),
-  key: fs.readFileSync(`${process.env.SSL_CERT_PATH}/privkey.pem`)
-};
-
 app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(3000);
-https.createServer(options, app).listen(3443);
+
+if (process.env.NODE_ENV === "production") {
+  const options = {
+    cert: fs.readFileSync(`${process.env.SSL_CERT_PATH}/fullchain.pem`),
+    key: fs.readFileSync(`${process.env.SSL_CERT_PATH}/privkey.pem`)
+  };
+
+  https.createServer(options, app).listen(3443);
+}
