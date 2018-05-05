@@ -4,7 +4,10 @@
   "description": "Personal homepage",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "build": "npm run clean && tsc && npm run copy-static",
+    "clean": "rm -fr dist",
+    "copy-static": "cp -R src/public dist/"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,14 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.4",
+    "prettier": "^1.12.1",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.12.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^2.8.3"
   }
 }
