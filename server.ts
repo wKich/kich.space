@@ -1,9 +1,10 @@
-const https = require('https')
-const fs = require('fs')
-const path = require('path')
-const dotenv = require('dotenv')
-const express = require('express')
-const morgan = require('morgan')
+import * as https from 'https'
+import * as fs from 'fs'
+import * as path from 'path'
+import * as dotenv from 'dotenv'
+import express from 'express'
+import morgan from 'morgan'
+
 const app = express()
 
 dotenv.config()
