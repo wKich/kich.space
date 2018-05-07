@@ -2,8 +2,8 @@ import * as https from 'https'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as dotenv from 'dotenv'
-import express from 'express'
-import morgan from 'morgan'
+import * as express from 'express'
+import * as morgan from 'morgan'
 
 const app = express()
 
