@@ -1,5 +1,6 @@
 {
   "extends": "../tsconfig.json",
+  "exclude": ["src/test.ts", "**/*.spec.ts"],
   "compilerOptions": {
     "sourceMap": true,
     "target": "es5",
