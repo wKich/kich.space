@@ -4,7 +4,7 @@
   "description": "Personal homepage",
   "main": "index.js",
   "scripts": {
-    "test": "ng test --watch=false --browsers ChromeHeadless",
+    "test": "ng test --watch=false --browsers ChromeHeadlessNoSandbox",
     "build": "npm run clean && npm run build:client && npm run build:server",
     "build:client": "ng build --prod",
     "build:server": "webpack --config webpack.server.config.js --progress",
